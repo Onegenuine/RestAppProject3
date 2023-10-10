@@ -8,18 +8,20 @@
 После этого, на нашем компьютере мы сможем принимать запросы от сенсора.
 
 Все запросы можно проверить в программе Postman 
+Перед запуском создать БД Postgres c таблицами, что приложены в коде в папке itil
+
 
 **Примеры основных запросов:**
 
 **Запрос POST для регистрации сенсора в БД:**
-POST /sensors/registration
+POST   http://localhost:8080/sensors/registration
 Jonson:
 {
 "name": "Sensor name"
 }
 
 **Запрос POST для регистрации измерений:**
-POST/measurements/add
+POST   http://localhost:8080/measurements/add
 Jonson:
 {
 "value": 24.6,
@@ -30,7 +32,7 @@ Jonson:
 }
 
 **Запрос GET который возвращает все измерения:**
-GET/measurements
+GET  http://localhost:8080/measurements/rainyDaysCount
 
 **Запрос GET который возвращает количество дождливых дней из БД:**
-GET/measurements/rainyDaysCount
+GET  http://localhost:8080/measurements/rainyDaysCount
